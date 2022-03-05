@@ -3,19 +3,6 @@
     "daily_challenges": {
       "main": "src/daily_challenges/main.mo",
       "type": "motoko"
-    },
-    "daily_challenges_assets": {
-      "dependencies": [
-        "daily_challenges"
-      ],
-      "frontend": {
-        "entrypoint": "src/daily_challenges_assets/src/index.html"
-      },
-      "source": [
-        "src/daily_challenges_assets/assets",
-        "dist/daily_challenges_assets/"
-      ],
-      "type": "assets"
     }
   },
   "defaults": {
