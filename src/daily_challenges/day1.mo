@@ -1,4 +1,4 @@
-import L "mo:base/List";
+import Array "mo:base/Array";
 
 actor {
     public query func add(a: Nat, b: Nat) : async Nat {
@@ -53,6 +53,6 @@ actor {
     };
 
     public query func remove_from_array(a: [Nat], b: Nat) : async [Nat] {
-      [0];
-    }
+      Array.filter<Nat>(a, func(x : Nat) {x != b});
+    };
 };
