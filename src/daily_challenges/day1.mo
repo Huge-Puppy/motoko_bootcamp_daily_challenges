@@ -1,4 +1,5 @@
 import Array "mo:base/Array";
+import Iter "mo:base/Iter";
 
 actor {
     public query func add(a: Nat, b: Nat) : async Nat {
@@ -54,5 +55,27 @@ actor {
 
     public query func remove_from_array(a: [Nat], b: Nat) : async [Nat] {
       Array.filter<Nat>(a, func(x : Nat) {x != b});
+    };
+
+    public query func selection_sort(a: [Nat]) : async [Nat] {
+      if (a.size() == 0) {
+        return [];
+      };
+      var tempArray : [var Nat] = Array.thaw(a);
+      var currentIndex : Nat = tempArray[0];
+      var minIndex : Nat = tempArray[0];
+      for (i in Iter.range(0, tempArray.size()-1)) {
+        minIndex := i;
+        currentIndex := i;
+        for (j in Iter.range(i, tempArray.size()-1)) {
+          if (tempArray[j] < tempArray[minIndex]) {
+            minIndex := j;
+          };
+        };
+        var tempVal : Nat = tempArray[currentIndex];
+        tempArray[currentIndex] := tempArray[minIndex];
+        tempArray[minIndex] := tempVal;
+      };
+      Array.freeze(tempArray);
     };
 };
