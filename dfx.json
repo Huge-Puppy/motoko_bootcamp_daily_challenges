@@ -1,7 +1,7 @@
 {
   "canisters": {
     "daily_challenges": {
-      "main": "src/daily_challenges/day3.mo",
+      "main": "src/daily_challenges/day4/day4.mo",
       "type": "motoko"
     }
   },
