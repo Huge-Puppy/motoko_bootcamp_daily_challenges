@@ -2,6 +2,7 @@ import List "mo:base/List";
 
 import Animal "animal";
 import Prob1 "custom";
+import MyList "list";
 
 actor {
     // #1
@@ -35,4 +36,5 @@ actor {
     public query func get_animals() : async [Animal.Animal] {
         List.toArray<Animal.Animal>(animals);
     };
+
 }
