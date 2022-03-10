@@ -1,4 +1,4 @@
-
+import HashMap "mo:base/HashMap";
 module {
     public type List<T> = ?(T, List<T>);
     // #7
@@ -66,6 +66,7 @@ module {
 
     // #11
     public func reverse<T>(l : List<T>) : List<T> {
+        
        l; 
     };
 }
